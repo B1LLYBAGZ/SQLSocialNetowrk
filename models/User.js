@@ -1,18 +1,24 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+
+const validateEmail = function (email) {
+  const regex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+  return regex.test(email);
+};
 
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      unique: true,
       required: true,
-      trimmed: true,
+      unique: true,
+      trim: true,
     },
     email: {
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, "Must match a valid email address"],
+      validate: [validateEmail, "Please enter valid email address"],
     },
     thoughts: [
       {
@@ -35,10 +41,13 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.virtual("friendCount").get(function () {
-  return this.friends.length;
-});
+userSchema
+  .virtual("friendCount")
+  // getter
+  .get(function () {
+    return this.friends.length;
+  });
 
-const User = model("User", userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
