@@ -23,10 +23,6 @@ GIVEN a social network API:
 - WHEN I test API POST and DELETE routes in Insomnia,
   THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list.
 
-## License
-
-This application uses the ISC License
-
 ## Installation / Usage
 
 The required packages/libraries needed were:
@@ -58,9 +54,13 @@ Thought Routes:
 
 ## Video Link
 
-[Link](https://drive.google.com/file/d/1dsF0_xS_00g4U4ZwARf7K6e2aqHnXstR/view)
+
+
+https://github.com/user-attachments/assets/ce266190-5f91-475d-85cd-923550d65785
+
+
 
 ## Questions
 
-- [Email](j_jenkins1@u.pacific.edu)
-- [GitHub](https://github.com/jjenkz)
+- [Email](098williamhogan@gmail.com)
+- [GitHub](https://github.com/B1LLYBAGZ)
